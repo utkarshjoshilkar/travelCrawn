@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Crown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c1c;
+            color: white;
+        }
+
+        /* Container for Travel Crown name and navigation links */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Navigation bar styled in the same row as Travel Crown */
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        /* Main content */
+        #content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        /* Iframe styles */
+        #iframe-container {
+            margin-top: 20px;
+            height: 600px; /* Set the height of the iframe */
+            width: 100%; /* Set the width of the iframe */
+            border: none; /* Remove border */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Travel Crown and Navigation Links in the same row -->
+    <div class="header">
+        <h1>TRAVEL CROWN</h1>
+        <div class="navbar">
+            <a href="#" class="nav-link" onclick="navigateTo('home')">Home</a>
+            <a href="#" class="nav-link" onclick="navigateTo('recent')">Recent</a>
+            <a href="#" class="nav-link" onclick="navigateTo('about')">About Us</a>
+            <a href="#" class="nav-link" onclick="navigateTo('contact')">Contact Us</a>
+            <a href="#" class="nav-link" onclick="navigateTo('help')">Help</a>
+        </div>
+    </div>
+
+    <!-- Dynamic content section -->
+    <div id="content">
+        <!-- <h1>Welcome to Travel Crown</h1>
+        <p>Make your travel experience better with Travel Crown!</p> -->
+    </div>
+
+    <!-- Iframe to load file2 -->
+    <iframe id="iframe-container" src="" style="display: none;"></iframe>
+
+    <script>
+        function navigateTo(page) {
+            let content = document.getElementById("content");
+            let iframe = document.getElementById("iframe-container");
+
+            switch (page) {
+                case 'home':
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>Welcome to Travel Crown</h1><p>Make your travel experience better with Travel Crown!</p>`;
+                    break;
+                case 'recent':
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>Recent</h1><p>Check out our latest travel offers.</p>`;
+                    break;
+                case 'about':
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>About Us</h1><p>Learn more about Travel Crown and our mission.</p>`;
+                    break;
+                case 'contact':
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>Contact Us</h1><p>Get in touch with Travel Crown for inquiries.</p>`;
+                    break;
+                case 'help':
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>Help</h1><p>Need help? Here are some frequently asked questions.</p>`;
+                    break;
+                default:
+                    content.style.display = "block";
+                    iframe.style.display = "none";
+                    content.innerHTML = `<h1>Welcome to Travel Crown</h1><p>Make your travel experience better with Travel Crown!</p>`;
+                    break;
+            }
+
+            // If the page is home, load file2 into the iframe
+            if (page === 'home') {
+                iframe.src = "home.html"; // Load file2
+                iframe.style.display = "block"; // Show the iframe
+                content.style.display = "none"; // Hide the main content
+            }
+            if (page === 'recent') {
+                iframe.src = "recent.html"; // Load file2
+                iframe.style.display = "block"; // Show the iframe
+                content.style.display = "none"; // Hide the main content
+            }
+            if (page === 'about') {
+                iframe.src = "about.html"; // Load file2
+                iframe.style.display = "block"; // Show the iframe
+                content.style.display = "none"; // Hide the main content
+            }
+            if (page === 'contact') {
+                iframe.src = "contact.html"; // Load file2
+                iframe.style.display = "block"; // Show the iframe
+                content.style.display = "none"; // Hide the main content
+            }
+            if (page === 'help') {
+                iframe.src = "help.html"; // Load file2
+                iframe.style.display = "block"; // Show the iframe
+                content.style.display = "none"; // Hide the main content
+            }
+        }
+    </script>
+
+</body>
+</html>
